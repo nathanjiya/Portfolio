@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathan Jiya – Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #e2e8f0;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    nav ul a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+    nav ul a:hover {
+      background: #334155;
+      color: #38bdf8;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #0c0e13;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        width: 60%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav ul a {
+        padding: 10px;
+        width: 100%;
+        display: block;
+      }
+      .hamburger {
+        display: block;
+        color: #fff;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin: 40px 0;
+      color: #38bdf8;
+    }
+
+    .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px 60px;
+  }
+
+  .card {
+    background: #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+    color: #3b82f6;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .card a button {
+    background: #38bdf8;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .card a button:hover {
+    background: #2563eb;
+  }
+
+    .contact {
+      text-align: center;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: #1e293b;
+      border-radius: 12px;
+      max-width: 600px;
+    }
+
+    .contact h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    .contact p {
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      margin: 0 10px;
+      font-size: 1.4rem;
+      color: #e2e8f0;
+      transition: color 0.3s;
+    }
+
+    .contact a:hover {
+      color: #38bdf8;
+    }
+
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      background: transparent;
+      border: 2px solid #38bdf8;
+      padding: 10px 20px;
+      color: #38bdf8;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      padding: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">ND</div>
+      <nav>
+        <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+          <a href="Home.html"><li>Home</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="projects.html"><li>Projects</li></a>
+          <a href="#contact"><li>Contact</li></a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1 id="projects">My Projects</h1>
+
+  <div class="project-grid">
+    <div class="card">
+      <img src="Susan Store dropdown.jpg" alt="Susan Store">
+      <div class="card-content">
+        <h3>Susan's Clothing Store</h3>
+        <p>A stylish clothing store website with product categories and filters.</p>
+        <a href="https://nathanjiya.github.io/Susan-s-E-commerce-Store/" target="_blank">
+          <button>View Live</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="waqiatul cares foundation.jpg" alt="Waqiatul Cares">
+      <div class="card-content">
+        <h3>Waqiatul Cares Foundation</h3>
+        <p>A non-profit website highlighting charitable initiatives and donations.</p>
+        <a href="https://example.com/waqiatul-cares" target="_blank">
+          <button>View Live</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot 2025-05-09 010753.jpg" alt="E-commerce">
+      <div class="card-content">
+        <h3>E-Commerce Website</h3>
+        <p>A responsive and dynamic ecommerce platform for online shopping.</p>
+        <a href="https://nathanjiya.github.io/Susan-Store/" target="_blank">
+          <button>View Live</button>
+        </a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="mc cleaners.jpg" alt="E-commerce">
+      <div class="card-content">
+        <h3>Mc Cleaners</h3>
+        <p>A basic homepage for Mc Cleaners.</p>
+        <a href="https://nathanjiya.github.io/Mc-cleaners/" target="_blank">
+          <button>View Live</button>
+        </a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="restaurant.jpg" alt="E-commerce">
+      <div class="card-content">
+        <h3>Restaurant Website</h3>
+        <p>A responsive user-centric restuarant website.</p>
+        <a href="https://nathanjiya.github.io/-First-Restaurant-website/" target="_blank">
+          <button>View Live</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact" id="contact">
+    <h3>Contact Me</h3>
+    <p>Have a project in mind or want to connect?</p>
+    <a href="mailto:jiyanndako@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://linkedin.com/in/nathan-jiya-13b8a5362" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://wa.me/09124566489" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </section>
+
+  <button class="back-button" onclick="history.back()">← Back</button>
+
+  <footer>
+    &copy; 2025 Nathan Jiya. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
